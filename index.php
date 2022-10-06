@@ -21,148 +21,68 @@ form {
 	margin: calc(25% + 100px);
 	margin-top: 70px;
 	padding-top: 28px;
-	margin-bottom: 30px
+	margin-bottom: 30px;
+	border-radius: 10px;
 }
 
 h1 {
+	
 	text-align: center;
 	padding: 12px;
-	color: rgb(206, 203, 203)
+	color: #fff ;
+	
 }
 
 input {
+	
 	width: calc(100% - 20px);
 	padding: 9px;
 	margin: auto;
 	margin-top: 12px;
-	font-size: 16px
+	font-size: 16px;
+	border-radius: 10px;
+	color:#fff
+	
 }
 
 input[type='submit']{
+	border: none;
 	background-color: #48e;
 	color: #fff;
 	width: calc(80% - 20px);
 	margin: 0 10%;
 	margin-top: 22px;
-	border: none;
+	border-radius: 15px;
 	
 }
 
-
-.ok {
-	text-align: center;
-	width: 100%;
-	padding: 12px;
-	background-color: #1e6;
-	color: #fff
-}
-.bad {
-	text-align: center;
-	width: 100%;
-	padding: 12px;
-	background-color: #a22;
-	color: #fff
-}
-.off{
-	text-align: center;
-	width: 100%;
-	padding: 12px;
-	background-color: rgb(0, 0, 0);
-	color: #fff
+input[type='submit']:hover{
+	transform: translateY(10%);
+	color: black;
+	background-color: #8F8EA9;
 
 }
+
+
 body{
-	background-image:url(../IMG/fondolegal.jpg);
+	background-image:url("https://images8.alphacoders.com/718/718915.jpg");
 	width: 100%;
 	height:100%vh;
 	background-size: cover;
+	color:#fff;
+}
 
-	color:white;
-	
-}
-.mensaje{
-	width: 100%;
-	max-width: 350px;
-	margin: auto;
-	margin-top: 20px;
-	text-align: left;
-	padding: 6px;
-	color: red;
-
-}
-h6 {
-	text-align: center;
-	padding: 12px;
-    color: rgb(206, 203, 203);
-    line-height: 20px;
-}
-.gabo{
-	padding: 50px 20px;
-	background-color: #381b1ba6;
-	margin: calc(25% + 100px);
-	margin-top: 70px;
-	padding-top: 28px;
-    margin-bottom: 30px;
-    line-height: 20px;
-}
 header{
-    width: 100%;
-    color: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: space-between;
-    background-color: rgba(0, 0, 0,.3);
-}
-header h1{
-    margin-left: 5px;
-    align-items: center;
-    width: calc(20% - 100px);
-    font-family: montez;
-    font-size: 55px;
-}
-header a{
-    margin-right: 30px;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    font-size: 25px;
-    transition: all ease 300ms;
-}
-.login-box{
-	background-image:url("https://images8.alphacoders.com/718/718915.jpg");
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	position: absolute;
-	top: -50px;
-	left: calc(50% - 50px);
-}
-
-
-.login-box{
-
-width: 100px;
-height: 100px;
-border-radius: 50%;
-position: absolute;
-top: 50px;
-left: 10px;
-left: calc(36% - 45px);
-}
-.lef{
-width: 100px;
-height: 100px;
-border-radius: 50%;
-position: absolute;
-top: 50px;
-left: 10px;
-left: calc(45% - 45px);
-}
-.righ{
-
-background-position: right;
-position: absolute;
+	border: solid 1px white;
+	margin-left: 35px;
+	margin-right: 35px;
+	text-align: center;
+	padding: 10px;
+	color: rgb(206, 203, 203);
+	font-size: 35px;
+	color: #fff;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	background-color: black;
 }
 
     </style>
@@ -171,11 +91,13 @@ position: absolute;
     <article>
     
     <form action="validar.php" method="post">
-    <h1 class="animate__animated animate__backInLeft">Sistema de Ingreso</h1>
-        <p> Usuario 
+		<header> ToDoList</header>
+    <h1 class="title">Sistema de Ingreso</h1>
+        <p> Usuario : 
             <input type="text" placeholder="Ingrese su usario" name="usurio">
         </p>
-        <p>Contraseña 
+		<br>
+        <p>Contraseña :
             <input type="password" placeholder="Ingrese su contraseña" name="contraseña">
         </p>
 
