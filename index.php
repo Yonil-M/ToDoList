@@ -41,7 +41,7 @@ input {
 	margin-top: 12px;
 	font-size: 16px;
 	border-radius: 10px;
-	color:#fff
+	color:black
 	
 }
 

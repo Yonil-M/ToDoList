@@ -4,7 +4,7 @@ $contraseña=$_POST['contraseña'];
 session_start();
 $_SESSION['usuario']=$usuario;
 
-$conexion=mysqli_connect("localhost","root","Mejia","login");
+$conexion=mysqli_connect("localhost","root","","validar");
 $consulta="SELECT*FROM usuario where usuario='$usuario' and contraseña='$contraseña'";
 $resultado=mysqli_query($conexion,$consulta);
 
