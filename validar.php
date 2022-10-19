@@ -1,27 +1,30 @@
 <?php
-$usuario=$_POST['usuario'];
-$contraseña=$_POST['contraseña'];
-session_start();
-$_SESSION['usuario']=$usuario;
 
-$conexion=mysqli_connect("localhost","root","","validar");
-$consulta="SELECT*FROM usuario where usuario='$usuario' and contraseña='$contraseña'";
-$resultado=mysqli_query($conexion,$consulta);
+include('db.php');
 
+$USUARIO=$_POST['usuario'];
+$PASSWORD=$_POST['password'];
+
+
+$consulta = " SELECT * FROM personal where usuario = '$USUARIO' and password='$PASSWORD' ";
+$resultado= mysqli_query($conexion, $consulta);
 
 $filas=mysqli_num_rows($resultado);
+
 if($filas){
     header("location:home.php");
+
 }else{
-    ?>
-    <?php
     include("index.php");
     ?>
-    <h1 class="bad"> Error en la autenticacion de usuario</h1>
+    <h1>ERROR DE AUTENTIFICACION</h1>
     <?php
-
 }
 mysqli_free_result($resultado);
 mysqli_close($conexion);
 
 
+
+
+
+?>

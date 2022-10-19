@@ -90,7 +90,12 @@ header{
 <body>
     <article>
     
-    <form action="validar.php" method="post">
+    <form action="home.php" method="post">
+		<?php
+		include "db.php";
+		include "controladorLogin.php"
+		
+		?>
 		<header> ToDoList</header>
     <h1 class="title">Sistema de Ingreso</h1>
         <p> Usuario : 
@@ -98,10 +103,10 @@ header{
         </p>
 		<br>
         <p>Contraseña :
-            <input type="password" placeholder="Ingrese su contraseña" name="contraseña">
+            <input type="password" placeholder="Ingrese su contraseña" name="password">
         </p>
 
-        <input type="submit" value="Ingresar">
+        <input type="submit" value="Ingresar" name="btnIngresar">
     </form>
     </article>
 </body>
