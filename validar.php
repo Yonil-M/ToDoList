@@ -1,29 +1,44 @@
 <?php
-
 include('db.php');
 
+    session_start();
+    ob_start();
+    $_SESSION['sesion_exito']=0;
+    
 $USUARIO=$_POST['usuario'];
 $PASSWORD=$_POST['password'];
+   
+    $_SESSION['usuario']=$USUARIO;
+    $_SESSION['pass']=$PASSWORD;
 
-
-$consulta = "SELECT* FROM persona where usuario = '$USUARIO' and password ='$PASSWORD' ";
-$resultado= mysqli_query($conexion, $consulta);
-
-$filas=mysqli_num_rows($resultado);
-
-if($filas){
-    header("location:home.php");
-
-}else{
-    include("index.php");
-    ?>
-
-    <h1 style="padding:15px; margin-left:20vw ;margin-right: 20vw; ;background-color: red;
- color:black ; border: solid 1px white; ">ERROR DE AUTENTIFICACION</h1>
-    <?php
     
+
+if($USUARIO=="" || $PASSWORD==""){
+    $_SESSION['sesion_exito']=2;
 }
-mysqli_free_result($resultado);
-mysqli_close($conexion);
+else{
+    include('db.php');
+    $_SESSION['sesion_exito']=3;
+    $resultado= mysqli_query($conexion,"SELECT * FROM persona where usuario = '$USUARIO' and password ='$PASSWORD' ");
+    
+    
+    while ($consulta = mysqli_fetch_array($resultado)){
+        
+        $_SESSION['sesion_exito']=1;
+        $filas=mysqli_num_rows($resultado);
+        if($filas){ 
+            header("location:home.php");
+            
+        }
+    mysqli_close($conexion);  
+    }
+}
+
+if($_SESSION['sesion_exito']<>1){
+    header('location:index.php');
+}
+
+
+
 
 ?>
