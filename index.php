@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>validar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  
     <style>
         * {
      padding: 0;
@@ -88,19 +90,42 @@ header{
 </head>
 
 <body>
+   <h3 style="padding:15px; margin:3vw;background-color: red;
+ color:black ; border: solid 1px white; ">
+    <b>
+        <?php
+        session_start();
+        ob_start();
+        if($_SESSION['sesion_exito']==0){
+            echo "Bienvenido";}
+        if($_SESSION['sesion_exito']==2){
+                echo "Los campos son obligatorios";}
+        if($_SESSION['sesion_exito']==3){
+        echo "Datos incorrectos";}
+
     
+        ?>
+    </b>
+   </h3> 
 <form action="validar.php" method="post">
 
 <header> ToDoList</header>
 <h1 class="title">Sistema de Ingreso</h1>
-<p>Usuario <input type="text"placeholder="Ingrese usuario" name="usuario" > </p>
+<p>Usuario: <input type="text"placeholder="Ingrese usuario" name="usuario" > </p>
 <br>
-<p>Contraseña<input type="password"placeholder="ingrese su contraseña" name="password" > </p>
+<p>Contraseña: <input type="password"placeholder="ingrese su contraseña" name="password" > </p>
 
-<input type="submit" value="ingresar">
+<input type="submit" value="ingresar" name="btn1">
+<br>
+<br>
+<a href="registra.php"> <button type="button" class="btn btn-primary">Registrarse</button></a>
 
 
 </form>
+
+<?php
+//include 'id.php';
+?>
 
 
 </body>
