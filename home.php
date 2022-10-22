@@ -44,10 +44,6 @@ $usuarios="select*from persona ";
   
   echo $_SESSION['id'];
     ?>
-
-
-
-
     <h1 class="col-8 bg-white  mt-3">
         Bienvenido: 
         
@@ -97,11 +93,11 @@ $usuarios="select*from persona ";
 
         ?>
         <tr>
-          <td><?php echo$row['id'] ?></td>
+          <td><?php $row['id'] ?></td>
           <td><?php echo$row['titulo'] ?></td>
           <td><?php echo$row['fecha'] ?></td>
-          <td style="width:10% ;"> <a href="delete.php" ID="<?php echo$row['id']" ?> class="btn btn-outline-danger">Delete</a> </td>
-          <td style="width:10% ;"><a href="" class="btn btn-outline-success">Update</a></td>
+          <td style="width:10% ;"> <a href="delete.php? ID=<?php echo$row['id'] ?> "  class="btn btn-outline-danger">Delete</a> </td>
+          <td style="width:10% ;"><a href="formUpdate.php? ID=<?php echo$row['id'] ?> " class="btn btn-outline-success">Update</a></td>
         </tr>
 
         <?php
