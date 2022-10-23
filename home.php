@@ -6,7 +6,9 @@ session_start();
     ob_start();
 $usuario=$_SESSION['usuario'];
 $pass=$_SESSION['pass'];
-
+if($usuario==null || $pass==null){
+  header('location:close.php');   
+}  
    
 $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
 

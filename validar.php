@@ -7,7 +7,8 @@ include('db.php');
     
 $USUARIO=$_POST['usuario'];
 $PASSWORD=$_POST['password'];
-   
+
+ 
     $_SESSION['usuario']=$USUARIO;
     $_SESSION['pass']=$PASSWORD;
 
@@ -16,6 +17,7 @@ $PASSWORD=$_POST['password'];
 if($USUARIO=="" || $PASSWORD==""){
     $_SESSION['sesion_exito']=2;
 }
+
 else{
     include('db.php');
     $_SESSION['sesion_exito']=3;

@@ -85,11 +85,14 @@ header{
 	background-color: black;
 }
 
-h2{
-    padding:15px; 
-    margin:3vw; 
+
+.alerta{
+    margin-top: 2vw; 
     color:black;
     font-weight: 900;
+    font-size: 3vw;
+    font-family: 
+Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     
 }
 
@@ -98,22 +101,26 @@ h2{
 </head>
 
 <body>
-   <h2>
-    <b>
+   <p class="alerta">
+    
         <?php
         session_start();
         ob_start();
-        if($_SESSION['sesion_exito']==0){
-            echo "Bienvenido";}
-        if($_SESSION['sesion_exito']==2){
-                echo "Los campos son obligatorios";}
-        if($_SESSION['sesion_exito']==3){
-        echo "Datos incorrectos";}
+        error_reporting(0);
+        $sesion=$_SESSION['sesion_exito'];
 
+       
+        if($sesion==0){
+            echo "!Bienvenido!";}
+        if($sesion==2){
+                echo "!Los campos son obligatorios!";}
+        if($sesion==3){
+        echo "!Datos incorrectos!";}
+         
         
         ?>
-    </b>
-   </h2> 
+    
+        </p> 
 <form action="validar.php" method="post">
 
 <header> ToDoList</header>
@@ -131,7 +138,7 @@ h2{
 </form>
 
 <?php
-
+//include 'close.php'
 ?>
 
 
