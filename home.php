@@ -174,8 +174,23 @@ $usuarios="select*from persona ";
 
   <div class="container ">
     <div class="col-xl- bg-white m-auto mt-3" style="border-radius:10px ;">
-    <table class="table">
-      <tbody>
+    <table class="table border-dark ">
+      <tbody class="" >
+        <tr class="table table-dark table-striped" >
+          <th >
+            <center>
+          Tarea</center>
+          </th>
+          <th>
+           
+            Fecha edicion
+          </th>
+          <th COLSPAN=2>
+            <center>
+            opciones:</center>
+          </th>
+        </tr>
+
         <?php
         while($row= mysqli_fetch_array($consultaUser)){
           
@@ -183,7 +198,7 @@ $usuarios="select*from persona ";
 
         ?>
         <tr>
-          <td><?php $row['id'] ?></td>
+          
           <td><?php echo$row['titulo'] ?></td>
           <td><?php echo$row['fecha'] ?></td>
           <td style="width:15% ;"> <a href="delete.php? ID=<?php echo$row['id'] ?> "  class="btn btn-outline-danger">Borrar <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">

@@ -3,7 +3,8 @@
     
     $list=$_POST['lista'];
     $idTarea=$_POST['id'];
-    $fecha=date("Y-m-d H:i:s");
+    date_default_timezone_set('America/Lima');
+    $fecha=date("Y-m-d H:i:s ");    
     
     mysqli_query($conexion,"UPDATE tarea SET titulo='$list',fecha='$fecha' WHERE id='$idTarea' ");
        

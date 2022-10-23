@@ -83,7 +83,7 @@ if(isset($_POST['btn2'])){
     mysqli_query($conexion,"INSERT INTO persona ( usuario, password, correo) VALUES ('$user','$pass','$gmail') ");
    
     header('location:index.php');
-    mysqli_close($conexion); 
+     
 
 }
 if(isset($_POST['btnClose'])){

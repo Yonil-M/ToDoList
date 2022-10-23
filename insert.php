@@ -8,7 +8,9 @@ $titulo=$_POST['lista'];
 
 echo $titulo;
 
-$fecha=date("Y-m-d H:i:s");
+date_default_timezone_set('America/Lima');
+$fecha=date("Y-m-d H:i:s ");
+
 
 if(isset($_POST['btnAdd'])){
     include('db.php');
