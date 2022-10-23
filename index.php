@@ -85,13 +85,20 @@ header{
 	background-color: black;
 }
 
+h2{
+    padding:15px; 
+    margin:3vw; 
+    color:black;
+    font-weight: 900;
+    
+}
+
     </style>
 
 </head>
 
 <body>
-   <h3 style="padding:15px; margin:3vw;background-color: red;
- color:black ; border: solid 1px white; ">
+   <h2>
     <b>
         <?php
         session_start();
@@ -103,10 +110,10 @@ header{
         if($_SESSION['sesion_exito']==3){
         echo "Datos incorrectos";}
 
-    
+        
         ?>
     </b>
-   </h3> 
+   </h2> 
 <form action="validar.php" method="post">
 
 <header> ToDoList</header>
@@ -124,7 +131,7 @@ header{
 </form>
 
 <?php
-//include 'id.php';
+
 ?>
 
 
