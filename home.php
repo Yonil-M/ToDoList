@@ -30,6 +30,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home ToDoList</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <style>
       *{
         margin: 0;
@@ -84,7 +85,12 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
     .logo{
       letter-spacing: 15px;
       font-size: 1.4em;
+      font-weight: bold;
+      color: black;
       
+    }
+    .logo:hover{
+      color: whitesmoke;
     }
 
     main{
@@ -94,8 +100,30 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
     form{
       padding:0rem 10rem;
     }
-
+    #deleteCuenta{
+      background-color: white;
+      float: left;
+    }
+    #deleteCuenta:hover{
+      background: #434343;
+    }
     
+    nav ul li ul{
+      display: none;
+      position: absolute;
+      bottom: -28px;
+      right: 118px;
+      
+      
+    }
+    nav ul li ul li a{
+      border-radius: 15px;
+    }
+
+    nav li:hover >ul{
+      display: block;
+    }
+
      
     </style>
 
@@ -113,6 +141,20 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
       <nav>
         <ul>
         <li> <p> Usuario : <?php echo $usuario ?> </p> </li>
+
+
+
+        <li style="width:4rem ; " class="btn btn-outline-danger" > <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+  <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+</svg>
+<ul>
+  <li><a id="deleteCuenta" href="deleteCuenta.php"> Eliminar Cuenta</a></li>
+  <li><a id="deleteCuenta" href=""> Actulizar contraseña</a></li>
+</ul>
+</li>
+
+
+
         <li style="width:6rem ;"><a href="close.php" class="btn btn-outline-warning">Salir 
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
@@ -217,7 +259,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
 
 
 </main>
-
+          
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 </html>
