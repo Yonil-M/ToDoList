@@ -8,27 +8,18 @@ $usuario=$_SESSION['usuario'];
 $pass=$_SESSION['pass'];
 if($usuario==null || $pass==null){
   header('location:close.php');   
-}  
-   
+}else{
 $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
 
  $sql_query=mysqli_query($conexion,$sql_id);
 
  while($idRow=mysqli_fetch_array($sql_query)){
-
+  $id=$idRow['id'];
       
-     $_SESSION['id']=$idRow['id'];
+     $_SESSION['id']=$id;
      
-  
-
-}
-
-
-
-$usuarios="select*from persona ";
-
-
-
+}}
+   
 
 ?>
 
@@ -166,7 +157,7 @@ $usuarios="select*from persona ";
 
     <?php
     $id=$_SESSION['id'];
-    $consultaUser= mysqli_query($conexion,"select*from tarea where idUsuario='$id'");
+    $consultaTarea= mysqli_query($conexion,"select*from tarea where idUsuario='$id' order by id desc");
 
     
     ?>
@@ -192,7 +183,7 @@ $usuarios="select*from persona ";
         </tr>
 
         <?php
-        while($row= mysqli_fetch_array($consultaUser)){
+        while($row= mysqli_fetch_array($consultaTarea)){
           
         
 

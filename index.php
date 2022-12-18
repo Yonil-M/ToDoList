@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>validar</title>
+    <title>Login ToDoList</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   
     <style>
@@ -65,7 +65,7 @@
  
  }
  body{
-	background-image:url("https://images8.alphacoders.com/718/718915.jpg");
+	background-image: url("images/fondoToDoList.jpg") ;
 	width: 100%;
 	height:100%vh;
 	background-size: cover;
@@ -87,7 +87,11 @@ header{
 
 
 .alerta{
-    margin-top: 2vw; 
+    background-color: #381b1ba6;
+    border-radius: 10px;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    margin-top: 3vw; 
     color:black;
     font-weight: 900;
     font-size: 3vw;
@@ -116,6 +120,11 @@ Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                 echo "!Los campos son obligatorios!";}
         if($sesion==3){
         echo "!Datos incorrectos!";}
+        if($sesion==4){
+        echo "Ingrese su nueva contraseña";
+        }if($sesion==5){
+        echo "Ingrese su nueva cuenta";
+        }
          
         
         ?>
@@ -133,7 +142,10 @@ Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 <br>
 <br>
 <a href="registra.php"> <button type="button" class="btn btn-primary">Registrarse</button></a>
-
+<br>
+<br>
+<a href="recuperarClave.php" id="olvidar" title="Recuperar Clave">Recuperar Clave</a>
+                <br><br>
 
 </form>
 
