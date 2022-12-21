@@ -107,6 +107,7 @@ $consulta=mysqli_fetch_array($sqlUpdate);
   <body class="bg-primary">
 
     <title>Update tarea</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body class="bg-info">
 <header class="header">
@@ -149,7 +150,8 @@ $consulta=mysqli_fetch_array($sqlUpdate);
   <path d="M13.683 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7.08a2 2 0 0 1-1.519-.698L.241 8.65a1 1 0 0 1 0-1.302L5.084 1.7A2 2 0 0 1 6.603 1h7.08zm-7.08 1a1 1 0 0 0-.76.35L1 8l4.844 5.65a1 1 0 0 0 .759.35h7.08a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1h-7.08z"/>
 </svg>
                 </button>
-            
+
+                
                 <button type="submit" class="col-2 btn btn-outline-primary " >Guardar edit
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check-square" viewBox="0 0 16 16">
   <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
@@ -175,5 +177,14 @@ if(isset($_POST['btnAtras'])){
         <div class="image" >
             <img src="images\img1.png" alt="">
         </div>
+
+      
+        
+<script type="text/javascript">
+  function sms(){
+    swal('Hello world');
+  }
+</script>
+        
 </body>
 </html>

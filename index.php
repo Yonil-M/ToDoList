@@ -124,8 +124,10 @@ Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         echo "Ingrese su nueva contraseña";
         }if($sesion==5){
         echo "Ingrese su nueva cuenta";
-        }
-         
+        }if($sesion==6){
+            echo "Revise su correo por favor";
+            }
+            unset($_SESSION['sesion_exito']);
         
         ?>
     
@@ -141,11 +143,12 @@ Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 <input type="submit" value="ingresar" name="btn1">
 <br>
 <br>
-<a href="registra.php"> <button type="button" class="btn btn-primary">Registrarse</button></a>
-<br>
-<br>
-<a href="recuperarClave.php" id="olvidar" title="Recuperar Clave">Recuperar Clave</a>
-                <br><br>
+<div class="row">
+<div class="col">
+<a href="registra.php"> <button type="button" class="btn btn-primary">!No tengo Cuenta!</button></a>
+</div><div class="col">
+<a href="recuperarClave.php" id="olvidar" title="Recuperar Clave"> <button type="button" class="btn btn-primary">Olvide mi clave... </button></a>
+</div>  </div>   
 
 </form>
 

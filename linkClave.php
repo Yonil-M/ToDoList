@@ -13,6 +13,7 @@ session_start();
     ob_start();
 $email=$_POST['email'];
 $_SESSION['correoToken']=$email;
+$_SESSION['msj']=0;
 
 
 $correo             = trim($email); //Quitamos algun espacion en blanco
@@ -22,8 +23,8 @@ $cantidadConsulta   = mysqli_num_rows($queryconsulta);
 $dataConsulta       = mysqli_fetch_array($queryconsulta);
 
 if($cantidadConsulta ==0){
-    //echo  'no exite el correo imgresado'; 
-    header("Location:index.php");
+    $_SESSION['msj']=1; 
+    header("Location:recuperarClave.php");
     exit();
 }else{
     //funcion de generar tokenUser  
@@ -119,7 +120,7 @@ $cuerpo .= '
     <table style="max-width: 600px; padding: 10px; margin:0 auto; border-collapse: collapse;">
     <tr>
         <td style="padding: 0">
-            <img style="padding: 0; display: block" src="https://media.istockphoto.com/id/1248415310/es/foto/ilustraci%C3%B3n-3d-del-concepto-de-startup-y-el-trabajo-en-equipo-empresarial-dos-hombres-felices.jpg" width="100%">
+            <img style="padding: 0; display: block" src="https://thumbs.dreamstime.com/b/to-do-list-banner-template-ribbon-label-sign-177646727.jpg" width="100%">
         </td>
     </tr>
     
@@ -133,9 +134,7 @@ $cuerpo .= '
                 <a href="http://localhost/login/nuevaClave.php" class="btnlink">Recuperar mi clave</a>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
-                <img style="padding: 0; display: block" src="https://permutasalcuadrado.com/Como-recuperar-clave-de-usuario-usando-PHP-y-MYSQL/assets/images/work.gif" width="100%">
-                <p>&nbsp;</p>
-            </div>
+                </div>
         </td>
     </tr>
 </table>';
@@ -161,7 +160,7 @@ $cuerpo .= '
             $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
             $mail->Username='201913301c@utea.edu.pe';//este debe ir en el address?
-            $mail->Password='milagrosperrax100pre';                            // SMTP password
+            $mail->Password='********';                            // SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
             $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
@@ -175,6 +174,7 @@ $cuerpo .= '
             $mail->Body    = $cuerpo;
 
             $mail->send();
+            $_SESSION['sesion_exito']=6;
             header('location:index.php');
 
         } catch (Exception $e) {
