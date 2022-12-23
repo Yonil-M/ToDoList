@@ -2,14 +2,14 @@
 
 session_start();
     ob_start();
-$id=$_SESSION['id'];
+$id=$_SESSION['id'];//variable global id usuario 
 
-$titulo=$_POST['lista'];
+$titulo=$_POST['lista'];//llamada de formulario a texfiel lista
 
-echo $titulo;
 
 date_default_timezone_set('America/Lima');
 $fecha=date("Y-m-d H:i:s ");
+//$hechaText=$fecha;
 
 
 if(isset($_POST['btnAdd'])){

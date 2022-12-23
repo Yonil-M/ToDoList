@@ -5,7 +5,7 @@ include('db.php');
     ob_start();
     $_SESSION['sesion_exito']=0;
     
-$USUARIO=$_POST['usuario'];
+$USUARIO=$_POST['usuario'];//recoger datos de formulario
 $PASSWORD=$_POST['password'];
 
  
@@ -39,9 +39,6 @@ else{
 if($_SESSION['sesion_exito']<>1){
     header('location:index.php');
 }
-
-
-
 
 
 ?>
