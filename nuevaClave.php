@@ -30,7 +30,7 @@ if($fila=1){
     }
 
     body{
-        background-image: url("images/fondoTec2.jpg");
+        background-image: url("images/libroAscenso.jpg");
         width: 100%;
 	    height:100%vh;
         background-size: cover;

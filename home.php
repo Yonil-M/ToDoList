@@ -36,6 +36,12 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
         margin: 0;
         padding: 0;
       }
+      body{
+        background-image: url("images/camaraLibro.jpg") ;
+        width: 100%;
+	      height:100%vh;
+        background-size: cover;
+      }
 
     .header{
       background-color: #333;
@@ -152,7 +158,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
     </script>
 
 
-  <body class="bg-primary">
+  <body>
 
     <?php
   
