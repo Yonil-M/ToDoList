@@ -31,6 +31,23 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
     <title>Home ToDoList</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/dark.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/03a89292db.js" crossorigin="anonymous"></script>
+
+
+
+
     <style>
       *{
         margin: 0;
@@ -184,6 +201,9 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
 <ul>
   <li ><button onclick="return DeleteUser()"> <a id="deleteCuenta" href="deleteCuenta.php">Eliminar Cuenta</a></button></li>
   <li><button onclick="sms()"> <a id="deleteCuenta" href="">Actilizar contraseña</a> </button></li>
+  <div class="modo" id="modo">
+        <i class="fas fa-toggle-on"></i>
+    </div>
 </ul> 
 
       </li>
@@ -194,11 +214,23 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
   <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
   <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
 </svg>
-        </a></li>
+        </a>
+      
+       
+
+
+
+      </li>
      </ul> </nav>
 
       </div>
 
+      <?php
+    $id=$_SESSION['id'];
+    $consultaUser= mysqli_query($conexion,"select*from tarea where idUsuario='$id'");
+
+    
+    ?>
     </header>
 
     <main>
@@ -206,7 +238,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
     <form action="insert.php" method="POST" >
         
     <div class="Container" >
-        <div class="row justify-content-center m-auto shadow bg-white mt-5 py-3" style="border-radius:10px ;">
+        <div class="row justify-content-center m-auto shadow bg-dark mt-5 py-3" style="border-radius:10px ;">
             <h3 class="text-center text-primary font-monospace">Todo List</h3>
             <div class="col-8">
             <textarea class="form-control" required id="exampleFormControlTextarea1" rows="1" maxlength="100"  name="lista" placeholder="Escriba la tarea que que decea agregar" ></textarea>
@@ -251,11 +283,21 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
           </th>
           <th>
            
-            Fecha edicion
+            Fecha edicion</center>
           </th>
           <th COLSPAN=2>
-            <center>
-            opciones:</center>
+            
+            opciones:
+  
+            <?php
+$row= mysqli_fetch_array($consultaUser)
+?>
+    <a href="remove.php? ID=<?php  echo$row['id']  ?> "  class="btn btn-outline-danger">Borrar Todo </a></center> 
+  
+    <?php
+?>
+    
+  
           </th>
         </tr>
 
@@ -288,7 +330,13 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
     </table>
 </div>
 </div>
-
+<form>
+            <div class="container-clock">
+            <center><h2 style="color:#000f14" id="time">00:00:00</h2></center>
+            <center><h2 style="color:#000f14"><p id="date">date</p></h2></center>
+          </div>
+          <script src="clock.js"></script>
+        </form>
 
 
 </main>
@@ -297,6 +345,6 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
   <a style="text-decoration:none ;" class="contacto" href="contacto.php"> Contactanos</a>
 </div>
 
-    
+<script src="js/main.js"></script>    
   </body>
 </html>

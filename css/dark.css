@@ -1,0 +1,39 @@
+#modo{
+    width: 10px;
+    font-size: 30px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.dark main {
+    background: rgb(14, 40, 52);
+}
+
+.dark {
+    background: rgb(13, 84, 117);
+}
+
+.dark {
+    background: rgb(4, 51, 74);
+}
+.dark #modo{
+    color: orange;
+    
+}
+.dark .card__perfil{
+    background: rgb(16, 43, 51);
+}
+
+.dark tr{
+    color: rgb(228, 234, 232);
+}
+.dark h3{
+    color: rgb(7, 166, 36);
+}
+.dark .enlace{
+    background: rgb(13, 84, 117);
+}
+.dark table{
+    
+    background: rgb(4, 51, 74);
+}
