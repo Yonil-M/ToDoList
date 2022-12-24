@@ -141,7 +141,14 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
       border: 0px;
     }
 
-     
+    .contacto{
+      color: black;
+      letter-spacing: 10px;
+      font-size: 1.4em;
+      position: relative;
+      left: 1200px;
+      top: 100px;
+    }
     </style>
 
   </head>
@@ -217,6 +224,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
         </div>
 
     </div>
+    
     </form>
     <br>
 
@@ -282,8 +290,12 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
 </div>
 
 
+
 </main>
 
+<div>
+  <a style="text-decoration:none ;" class="contacto" href="contacto.php"> Contactanos</a>
+</div>
 
     
   </body>
