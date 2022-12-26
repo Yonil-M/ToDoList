@@ -86,7 +86,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
       display: block;
       margin: 0.5rem 4rem;
       padding: 0.3rem 1rem;
-      background-color: red;
+      background-color: #45B39D;
       border-radius: 10px;
     }
     .logo{
@@ -108,7 +108,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
       padding:0rem 10rem;
     }
     #deleteCuenta{
-      background-color: red;
+      background-color: #45B39D;
       float: left;
       color: whitesmoke;
     }
@@ -121,7 +121,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
       display: none;
       position: absolute;
       bottom: -75px;
-      right: 185px;
+      right: 180px;
       
       
     }
@@ -140,7 +140,22 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
       background-color: transparent;
       border: 0px;
     }
+    #divFormulario{
+      background-color: #45B39D;
+    }
+    #tablaTarea{
+      
+      background-color: #45B39D;
+    }
 
+    #tablaHeadLeft{
+      border-top-left-radius: 10px;
+    }
+
+    #tablaHeadRigth{
+      border-top-right-radius: 10px;
+    }
+    
      
     </style>
 
@@ -176,7 +191,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
 </svg>
 <ul>
   <li ><button onclick="return DeleteUser()"> <a id="deleteCuenta" href="deleteCuenta.php">Eliminar Cuenta</a></button></li>
-  <li><button onclick="sms()"> <a id="deleteCuenta" href="">Actilizar contraseña</a> </button></li>
+  <li><button> <a id="deleteCuenta" href="">Modo oscuro check</a> </button></li>
 </ul> 
 
       </li>
@@ -199,7 +214,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
     <form action="insert.php" method="POST" >
         
     <div class="Container" >
-        <div class="row justify-content-center m-auto shadow bg-white mt-5 py-3" style="border-radius:10px ;">
+        <div id="divFormulario" class="row justify-content-center m-auto shadow  mt-5 py-3" style="border-radius:10px ;">
             <h3 class="text-center text-primary font-monospace">Todo List</h3>
             <div class="col-8">
             <textarea class="form-control" required id="exampleFormControlTextarea1" rows="1" maxlength="100"  name="lista" placeholder="Escriba la tarea que que decea agregar" ></textarea>
@@ -233,11 +248,11 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
 
 
   <div class="container ">
-    <div class="col-xl- bg-white m-auto mt-3" style="border-radius:10px ;">
+    <div id="tablaTarea" class="col-xl- m-auto mt-3" style="border-radius:10px ;">
     <table class="table border-dark ">
       <tbody class="" >
-        <tr class="table table-dark table-striped" >
-          <th >
+        <tr  class="table table-dark table-striped"  >
+          <th id="tablaHeadLeft">
             <center>
           Tarea</center>
           </th>
@@ -245,7 +260,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
            
             Fecha edicion
           </th>
-          <th COLSPAN=2>
+          <th id="tablaHeadRigth" COLSPAN=2>
             <center>
             opciones:</center>
           </th>

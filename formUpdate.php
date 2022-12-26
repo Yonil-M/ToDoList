@@ -72,7 +72,7 @@ $consulta=mysqli_fetch_array($sqlUpdate);
       display: block;
       margin: 0.5rem 4rem;
       padding: 0.3rem 1rem;
-      background-color: red;
+      background-color: #45B39D;
       border-radius: 10px;
     }
     .logo{
@@ -83,10 +83,22 @@ $consulta=mysqli_fetch_array($sqlUpdate);
 
     main{
       padding: 5rem;
+      background-color: transparent;
+    }
+    .Container{
+      margin-top: 5rem;
+      padding: 0px;
+      
+      border-radius: 20px;
+    }
+    #formInterior{
+      background-color: #45B39D;
+      border-radius: 20px;
     }
 
     form{
       padding:0rem 10rem;
+      
     }
     .image img{
         height: 25rem;
@@ -99,12 +111,18 @@ $consulta=mysqli_fetch_array($sqlUpdate);
         justify-content: center;
         align-items: center; 
     }
+    body{
+      background-image: url("images/maquinaEscribir.jpg");
+        width: 100%;
+	      height:100%vh;
+        background-size: cover;
+    }
     
      
     </style>
 
   </head>
-  <body class="bg-primary">
+  <body>
 
     <title>Update tarea</title>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -116,7 +134,7 @@ $consulta=mysqli_fetch_array($sqlUpdate);
       <a class="logo" href=""> ToDoList</a>
       <nav>
         <ul>
-        <li> <p> Usuario : <?php echo $usuario ?> </p> </li>
+        <li> <p> Usuario :<b style="text-transform: uppercase;"> <?php echo $usuario ?> </b></p> </li>
         <li style="width:6rem ;"><a href="close.php" class="btn btn-outline-warning">Salir 
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
@@ -131,11 +149,11 @@ $consulta=mysqli_fetch_array($sqlUpdate);
 
 
 
-<main>
+<main><div class="entorno">
 <form action="update.php" method="POST">
         
         <div class="Container">
-            <div class="column justify-content-center m-auto shadow bg-white mt-5 py-5">
+            <div id="formInterior" class="column justify-content-center m-auto shadow py-5">
                 <h3 class="text-center text-primary font-monospace">Modificar tarea</h3>
                 
                 <div class="col-7 m-auto">
@@ -167,18 +185,13 @@ $consulta=mysqli_fetch_array($sqlUpdate);
  </center>       <br>
 
     
-        </main>
+       </div> </main>
 <?php
 if(isset($_POST['btnAtras'])){
   header('location:home.php');}
 ?>
 
 
-        <div class="image" >
-            <img src="images\img1.png" alt="">
-        </div>
-
-      
         
 <script type="text/javascript">
   function sms(){
