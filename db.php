@@ -1,5 +1,5 @@
 <?php
 
-$conexion=mysqli_connect("localhost","root","","validar","33065");
+$conexion=mysqli_connect("localhost","root","","validar",);
 
 ?>

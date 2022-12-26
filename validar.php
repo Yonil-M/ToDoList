@@ -28,6 +28,17 @@ else{
         
         $_SESSION['sesion_exito']=1;
         $filas=mysqli_num_rows($resultado);
+
+        if(isset($_POST['recordarme'])){
+        setcookie('usuario',$_POST['usuario'],time() + 60*60*24);
+        setcookie('password',$_POST['password'],time() + 60*60*24);
+        }
+        
+        else{
+        setcookie('usuario','',time() - 60*60*24);
+        setcookie('password','',time() - 60*60*24);
+        }
+
         if($filas){ 
             header("location:home.php");
             

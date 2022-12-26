@@ -100,6 +100,19 @@ Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     
 }
 
+.contacto{
+      color: white;
+      letter-spacing: 5px;
+      font-size: 10;
+    }
+
+label input[type="checkbox"]{
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    margin-right: 5px;
+}
+
     </style>
 
 </head>
@@ -109,6 +122,16 @@ Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     
         <?php
         session_start();
+
+        if(isset($_COOKIE['usuario']) && isset($_COOKIE['password'])){
+            $id=$_COOKIE['usuario'];
+            $pass=$_COOKIE['password'];
+        }
+        else{
+            $id="";
+            $pass="";
+        }
+
         ob_start();
         error_reporting(0);
         $sesion=$_SESSION['sesion_exito'];
@@ -136,10 +159,12 @@ Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
 <header> ToDoList</header>
 <h1 class="title">Sistema de Ingreso</h1>
-<p>Usuario: <input type="text"placeholder="Ingrese usuario" name="usuario" > </p>
+<p>Usuario: <input type="text"placeholder="Ingrese usuario" name="usuario" value="<?php echo $id ?>"> </p>
 <br>
-<p>Contraseña: <input type="password"placeholder="ingrese su contraseña" name="password" > </p>
-
+<p>Contraseña: <input type="password"placeholder="ingrese su contraseña" name="password" value="<?php echo $pass ?>"> </p>
+<label>
+    <input type="checkbox" name="recordarme">Recordar usuario y contraseña
+</label> 
 <input type="submit" value="ingresar" name="btn1">
 <br>
 <br>
@@ -149,6 +174,10 @@ Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 </div><div class="col">
 <a href="recuperarClave.php" id="olvidar" title="Recuperar Clave"> <button type="button" class="btn btn-primary">Olvide mi clave... </button></a>
 </div>  </div>   
+
+<br/>
+<br/>
+<a style="text-decoration:none ;" class="contacto" href="contacto.php"> Contactanos</a>
 
 </form>
 
