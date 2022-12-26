@@ -14,7 +14,7 @@
         <input type="email" name="email" placeholder="correo electronico" required >
         <input type="text" name="texto" placeholder="asunto" required >
         <textarea placeholder="mensaje" name="asunto"></textarea>
-        <input type="submit">
+        <input id="enviar" type="submit">
 </form>
 
 </body>

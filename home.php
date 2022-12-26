@@ -29,6 +29,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home ToDoList</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
@@ -148,13 +149,30 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
       background-color: #45B39D;
     }
     .contacto{
-      color: black;
-      letter-spacing: 10px;
-      font-size: 1.4em;
-      position: relative;
-      left: 1200px;
-      top: 100px;
+      height: 80px;
+    width: 80px;
+    border-radius: 60px;
+    background: url("images/email.svg");
+    background-color: royalblue;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.2);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 45px;
+    right: 45px;
     }
+    .contacto ul li{
+      text-decoration: none;
+      list-style: none;
+      position: absolute;
+      right: -4px;
+      top: 5rem;
+      font-weight: bold;
+    }
+
+
+
     #tablaHeadLeft{
       border-top-left-radius: 10px;
     }
@@ -306,7 +324,12 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
 </main>
 
 <div>
-  <a style="text-decoration:none ;" class="contacto" href="contacto.php"> Contactanos</a>
+  <a style="text-decoration:none; color:black" class="contacto" href="contacto.php"> 
+          <ul>
+            
+            <li>Contactanos</li>
+          </ul>
+</a>
 </div>
 
     

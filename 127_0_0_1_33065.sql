@@ -43,13 +43,7 @@ CREATE TABLE `persona` (
 INSERT INTO `persona` (`id`, `usuario`, `password`, `correo`) VALUES
 (1, 'yonil', 'Mejia', 'yonilmq@gmail.com'),
 (2, 'Juan', '159', 'Juancito@gmail.com'),
-(4, 'diego', '456', 'diego@gmail.com'),
-(5, 'pedro', '789', 'pedro@gmail.com'),
-(6, 'juaquin', '123', 'juaquin@gmail.com'),
-(7, 'mathews', 'espada', 'mathews@gmail.com'),
-(8, 'marco', '789', 'marco@gmail.com'),
-(9, 'diego', '0123', 'diegoQuispe@gmail.com'),
-(11, 'lorenzo', '1234', 'lore@gmail.com');
+(4, 'diego', '456', 'diego@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -69,18 +63,8 @@ CREATE TABLE `tarea` (
 --
 
 INSERT INTO `tarea` (`id`, `idUsuario`, `titulo`, `fecha`) VALUES
-(2, 2, 'trabajo update', '2022-10-22 19:45:15'),
-(3, 2, 'tarea de campo update', '2022-10-23 00:31:24'),
 (6, 1, 'actualizacion de fecha correccion(hora Peru)', '2022-10-23 13:13:10'),
-(11, 4, 'tarea decoration', '2022-10-23 19:00:30'),
-(15, 1, 'Se corriguio la fecha', '2022-10-23 13:25:18'),
-(30, 6, 'casa acabo todo list\r\n', '2022-10-23 02:01:33'),
-(31, 2, 'llevar al perro a pasear', '2022-10-23 02:27:18'),
-(32, 2, 'Comprar croquetas para el perro', '2022-10-23 14:51:08'),
-(34, 4, 'enviar tarea final', '2022-10-23 19:00:17'),
-(36, 1, 'envio de tarea', '2022-10-23 13:25:27'),
-(37, 9, 'Tarea lista para enviar', '2022-10-23 13:49:14'),
-(39, 11, 'Primera tarea de lorenzo', '2022-10-23 15:10:17');
+(15, 1, 'Se corriguio la fecha', '2022-10-23 13:25:18');
 
 --
 -- Índices para tablas volcadas
