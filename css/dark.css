@@ -1,7 +1,8 @@
-#modo{
-    width: 10px;
+i{
+    width: 19px;
     font-size: 30px;
-    margin: auto;
+    margin-top: 0px;
+    padding-right: 2px;
     cursor: pointer;
 }
 
@@ -16,7 +17,7 @@
 .dark {
     background: rgb(4, 51, 74);
 }
-.dark #modo{
+.dark i{
     color: orange;
     
 }

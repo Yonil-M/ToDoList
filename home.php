@@ -125,12 +125,12 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
     form{
       padding:0rem 10rem;
     }
-    #deleteCuenta{
+    .deleteCuenta{
       background-color: #45B39D;
       float: left;
       color: whitesmoke;
     }
-    #deleteCuenta:hover{
+    .deleteCuenta:hover{
       background: #434343;
       color: black;
     }
@@ -194,8 +194,14 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
       border-top-left-radius: 10px;
     }
     #tablaHeadRigth{
+     
       border-top-right-radius: 10px;
     }
+    #tablaHeadRigth center a{
+      position: relative;
+      right: 6.5rem;
+    }
+
     </style>
 
   </head>
@@ -229,11 +235,11 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
   <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
 </svg>
 <ul>
-  <li ><button onclick="return DeleteUser()"> <a id="deleteCuenta" href="deleteCuenta.php">Eliminar Cuenta</a></button></li>
+  <li ><button onclick="return DeleteUser()"> <a class="deleteCuenta" href="deleteCuenta.php">Eliminar Cuenta</a></button></li>
 
-  <li><button> <a id="deleteCuenta" href="">Modo oscuro <div class="modo" id="modo">
-        <i class="fas fa-toggle-on"></i>
-    </div>  </a> </button></li>
+  <li> <a class="deleteCuenta" href=""> Modo oscuro 
+        <i class="fas fa-toggle-on" id="modo"></i>
+      </a> </li>
 
 </ul> 
 
@@ -321,16 +327,15 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
 
           <th id="tablaHeadRigth" COLSPAN=2>
             <center>
-            opciones:</center>
+            <a href="remove.php? ID=<?php  echo$row['id']  ?> "  class="btn btn-outline-danger">Borrar Todo </a>
+            opciones:
+          </center>
 
           </th>
         </tr>
 
         <?php
         while($row= mysqli_fetch_array($consultaTarea)){
-          
-        
-
         ?>
         <tr>
           
