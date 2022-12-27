@@ -327,7 +327,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
 
           <th id="tablaHeadRigth" COLSPAN=2>
             <center>
-            <a href="remove.php? ID=<?php  echo$row['id']  ?> "  class="btn btn-outline-danger">Borrar Todo </a>
+            <a href="remove.php"  class="btn btn-outline-danger">Borrar Todo </a>
             opciones:
           </center>
 
