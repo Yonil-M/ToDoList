@@ -9,12 +9,16 @@
 </head>
 <body class="contacto">
     <h1>En que te podemos Ayudar!</h1>
+
 <form action="https://formsubmit.co/gonzalesromanhiroshiyaisen@gmail.com" method="POST">
         <input type="text" name="name" placeholder="nombre completo" required >
         <input type="email" name="email" placeholder="correo electronico" required >
         <input type="text" name="texto" placeholder="asunto" required >
         <textarea placeholder="mensaje" name="asunto"></textarea>
-        <input type="submit">
+        <tipo de entrada="nombre oculto"="_captcha" valor="falso">
+        <input type="hidden" name="_next" value="http://localhost/ToDoList-master/ToDoList/">
+        <input id="enviar" type="submit">
+        
 </form>
 
 </body>
