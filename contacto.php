@@ -14,7 +14,10 @@
         <input type="email" name="email" placeholder="correo electronico" required >
         <input type="text" name="texto" placeholder="asunto" required >
         <textarea placeholder="mensaje" name="asunto"></textarea>
-        <input type="submit">
+        <tipo de entrada="nombre oculto'='_captcha" valor="falso">
+        <input type="hidden" name="_next" value="http://localhost/login/index.php">
+        <input id="enviar" type="submit">
+        
 </form>
 
 </body>

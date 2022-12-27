@@ -29,6 +29,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home ToDoList</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -103,7 +104,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
       display: block;
       margin: 0.5rem 4rem;
       padding: 0.3rem 1rem;
-      background-color: red;
+      background-color: #45B39D;
       border-radius: 10px;
     }
     .logo{
@@ -125,7 +126,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
       padding:0rem 10rem;
     }
     #deleteCuenta{
-      background-color: red;
+      background-color: #45B39D;
       float: left;
       color: whitesmoke;
     }
@@ -138,7 +139,7 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
       display: none;
       position: absolute;
       bottom: -75px;
-      right: 185px;
+      right: 180px;
       
       
     }
@@ -157,14 +158,43 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
       background-color: transparent;
       border: 0px;
     }
-
+    #divFormulario{
+      background-color: #45B39D;
+    }
+    #tablaTarea{
+      
+      background-color: #45B39D;
+    }
     .contacto{
-      color: black;
-      letter-spacing: 10px;
-      font-size: 1.4em;
-      position: relative;
-      left: 1200px;
-      top: 100px;
+      height: 80px;
+    width: 80px;
+    border-radius: 60px;
+    background: url("images/email.svg");
+    background-color: royalblue;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.2);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 45px;
+    right: 45px;
+    }
+    .contacto ul li{
+      text-decoration: none;
+      list-style: none;
+      position: absolute;
+      right: -4px;
+      top: 5rem;
+      font-weight: bold;
+    }
+
+
+
+    #tablaHeadLeft{
+      border-top-left-radius: 10px;
+    }
+    #tablaHeadRigth{
+      border-top-right-radius: 10px;
     }
     </style>
 
@@ -200,10 +230,11 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
 </svg>
 <ul>
   <li ><button onclick="return DeleteUser()"> <a id="deleteCuenta" href="deleteCuenta.php">Eliminar Cuenta</a></button></li>
-  <li><button onclick="sms()"> <a id="deleteCuenta" href="">Actilizar contraseña</a> </button></li>
-  <div class="modo" id="modo">
+
+  <li><button> <a id="deleteCuenta" href="">Modo oscuro <div class="modo" id="modo">
         <i class="fas fa-toggle-on"></i>
-    </div>
+    </div>  </a> </button></li>
+
 </ul> 
 
       </li>
@@ -238,7 +269,9 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
     <form action="insert.php" method="POST" >
         
     <div class="Container" >
-        <div class="row justify-content-center m-auto shadow bg-dark mt-5 py-3" style="border-radius:10px ;">
+
+        <div id="divFormulario" class="row justify-content-center m-auto shadow  mt-5 py-3" style="border-radius:10px ;">
+
             <h3 class="text-center text-primary font-monospace">Todo List</h3>
             <div class="col-8">
             <textarea class="form-control" required id="exampleFormControlTextarea1" rows="1" maxlength="100"  name="lista" placeholder="Escriba la tarea que que decea agregar" ></textarea>
@@ -273,11 +306,11 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
 
 
   <div class="container ">
-    <div class="col-xl- bg-white m-auto mt-3" style="border-radius:10px ;">
+    <div id="tablaTarea" class="col-xl- m-auto mt-3" style="border-radius:10px ;">
     <table class="table border-dark ">
       <tbody class="" >
-        <tr class="table table-dark table-striped" >
-          <th >
+        <tr  class="table table-dark table-striped"  >
+          <th id="tablaHeadLeft">
             <center>
           Tarea</center>
           </th>
@@ -285,19 +318,11 @@ $sql_id="select id from persona where usuario='$usuario' and password='$pass'";
            
             Fecha edicion</center>
           </th>
-          <th COLSPAN=2>
-            
-            opciones:
-  
-            <?php
-$row= mysqli_fetch_array($consultaUser)
-?>
-    <a href="remove.php? ID=<?php  echo$row['id']  ?> "  class="btn btn-outline-danger">Borrar Todo </a></center> 
-  
-    <?php
-?>
-    
-  
+
+          <th id="tablaHeadRigth" COLSPAN=2>
+            <center>
+            opciones:</center>
+
           </th>
         </tr>
 
@@ -342,7 +367,12 @@ $row= mysqli_fetch_array($consultaUser)
 </main>
 
 <div>
-  <a style="text-decoration:none ;" class="contacto" href="contacto.php"> Contactanos</a>
+  <a style="text-decoration:none; color:black" class="contacto" href="contacto.php"> 
+          <ul>
+            
+            <li>Contactanos</li>
+          </ul>
+</a>
 </div>
 
 <script src="js/main.js"></script>    

@@ -112,6 +112,28 @@ label input[type="checkbox"]{
     margin: 0;
     margin-right: 5px;
 }
+.contacto{
+      height: 80px;
+    width: 80px;
+    border-radius: 60px;
+    background: url("images/email.svg");
+    background-color: royalblue;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.2);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 30px;
+    right: 60px;
+    }
+    .contacto ul li{
+      text-decoration: none;
+      list-style: none;
+      position: absolute;
+      right: -35px;
+      top: 5rem;
+      font-weight: bold;
+    }
 
     </style>
 
@@ -175,12 +197,17 @@ label input[type="checkbox"]{
 <a href="recuperarClave.php" id="olvidar" title="Recuperar Clave"> <button type="button" class="btn btn-primary">Olvide mi clave... </button></a>
 </div>  </div>   
 
-<br/>
-<br/>
-<a style="text-decoration:none ;" class="contacto" href="contacto.php"> Contactanos</a>
 
 </form>
 
+<div>
+  <a style="text-decoration:none; color:black" class="contacto" href="contacto.php"> 
+          <ul>
+            
+            <li>Contactanos</li>
+          </ul>
+</a>
+</div>
 <?php
 //include 'close.php'
 ?>
